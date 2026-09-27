@@ -11,3 +11,4 @@ This repository is my portfolio for WDD331R: Advanced CSS. I will be updating th
 ## Pages
 
 - [Home] (index.html)
+- [Custom Properties] (unit1/custom-properties/index.html)
