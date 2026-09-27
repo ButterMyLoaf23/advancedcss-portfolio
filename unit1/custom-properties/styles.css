@@ -1,0 +1,222 @@
+/* ========================================
+   TOKENS
+   ======================================== */
+
+:root {
+    /* Colors */
+    --color-primary: #315c72;
+    --color-background: #f4f7f8;
+    --color-surface: #ffffff;
+    --color-text: #263238;
+    --color-muted: #66777f;
+    --color-accent: #d98b5f;
+    --color-border: #d9e2e6;
+
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+
+    /* Typography */
+    --font-family: Arial, Helvetica, sans-serif;
+    --font-size-base: 1rem;
+
+    /* Borders */
+    --radius-small: 0.5rem;
+    --radius-large: 1rem;
+}
+
+
+/* ========================================
+   RESET
+   ======================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    background: var(--color-background);
+    line-height: 1.6;
+
+    /* clamp() makes the padding responsive */
+    padding: clamp(1rem, 3vw, 3rem);
+
+    a {
+        color: var(--color-primary);
+        font-weight: 600;
+
+        &:hover {
+            color: var(--color-accent);
+        }
+    }
+}
+
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.site-nav {
+    max-width: 1100px;
+    margin: 0 auto var(--spacing-lg);
+    padding: var(--spacing-sm);
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
+/* ========================================
+   BOARD HEADER
+   ======================================== */
+
+.board-header {
+    max-width: 1100px;
+    margin: 0 auto var(--spacing-lg);
+    padding: var(--spacing-lg);
+    text-align: center;
+    background: var(--color-primary);
+    color: var(--color-surface);
+    border-radius: var(--radius-large);
+
+    h1 {
+        /* Fluid heading size */
+        font-size: clamp(2rem, 5vw, 4rem);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    p {
+        color: #e7eef1;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+}
+
+
+/* ========================================
+   CARD GROUP
+   ======================================== */
+
+.card-group {
+    max-width: 1100px;
+    margin: 0 auto var(--spacing-lg);
+
+    h2 {
+        color: var(--color-primary);
+        margin-bottom: var(--spacing-md);
+        font-size: 1.75rem;
+        border-bottom: 2px solid var(--color-accent);
+        padding-bottom: var(--spacing-sm);
+    }
+}
+
+
+/* ========================================
+   CARDS GRID
+   ======================================== */
+
+.cards {
+    display: grid;
+
+    /* calc() derives the gap from a token */
+    gap: calc(var(--spacing-md) * 1.5);
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+
+/* ========================================
+   INDIVIDUAL CARD
+   ======================================== */
+
+.card {
+    background: var(--color-surface);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-large);
+    border: 1px solid var(--color-border);
+
+    /* var() fallback */
+    box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.08));
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-tag {
+        display: inline-block;
+        align-self: flex-start;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: var(--color-surface);
+        background: var(--color-accent);
+        padding: 0.25rem 0.75rem;
+        border-radius: var(--radius-small);
+    }
+
+    h3 {
+        color: var(--color-primary);
+        font-size: 1.3rem;
+    }
+
+    p {
+        color: var(--color-muted);
+        flex-grow: 1;
+    }
+
+    .card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--spacing-sm);
+        padding-top: var(--spacing-md);
+        border-top: 1px solid var(--color-border);
+
+        span {
+            color: var(--color-muted);
+            font-size: 0.9rem;
+        }
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.board-footer {
+    max-width: 1100px;
+    margin: var(--spacing-lg) auto 0;
+    padding: var(--spacing-lg);
+    text-align: center;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+}
