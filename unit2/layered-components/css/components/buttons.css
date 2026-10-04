@@ -2,58 +2,25 @@
    Use native nesting for pseudo-classes and modifiers. */
 
 .btn {
-    display: inline-block;
     padding: var(--space-small) var(--space-medium);
-    border: 2px solid transparent;
+    border: 2px solid var(--color-primary);
     border-radius: var(--border-radius);
+    font-weight: bold;
     cursor: pointer;
-    font-weight: 700;
-    
-    .btn:hover:not(:disabled) {
-        transform: translateY(-1px);
-    }
-
-    .btn:focus-visible {
-        outline: 3px solid var(--color-accent);
-        outline-offset: 3px;
-    }
-
-    .btn:disabled {
-        cursor: not-allowed;
-        opacity: 0.5;
-    }
 
     .btn.primary {
+        background-color: var(--color-primary);
         color: var(--color-surface);
-        background: var(--color-primary);
-
-        .btn:hover:not(:disabled) {
-            background: var(--color-accent);
-        }
     }
 
     .btn.secondary {
+        background-color: var(--color-surface);
         color: var(--color-primary);
-        background: var(--color-surface);
-        border-color: var(--color-primary);
-
-        .btn:hover:not(:disabled) {
-            color: var(--color-surface);
-            background: var(--color-primary);
-        }
     }
 }
 
-.actions {
-    margin-block: var(--space-large);
-    padding: var(--space-large);
-    background: var(--color-surface);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-card);
-
-    .button-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-small);
-    }
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-small);
 }
