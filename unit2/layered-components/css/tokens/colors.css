@@ -2,5 +2,13 @@
    Name by purpose (--color-primary, --color-surface)
    not appearance (--blue, --light-gray). */
 :root {
-    /* TODO: Define color tokens here */
+    --color-primary: #2f4f6f;
+    --color-background: #f5f7fa;
+    --color-text: #1f2937;
+    --color-accent: #b7791f;
+    --color-surface: #ffffff;
+    --color-muted: #64748b;
+    --color-border: #d7dee7;
+    --color-success: #2f855a;
+    --color-warning: #c05621;
 }

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Attribute Selectors Demo</title>
+    <style>
+        /* =========================
+           Base page styling
+           ========================= */
+        :root {
+            --bg: #f5f7fb;
+            --card: #ffffff;
+            --text: #172033;
+            --muted: #5f6b7a;
+            --border: #d8dee9;
+            --accent: #2563eb;
+            --green: #15803d;
+            --orange: #c2410c;
+            --red: #b91c1c;
+            --purple: #7e22ce;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172033;
+            color: white;
+            padding: 3rem 1.5rem;
+        }
+
+        header .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+        }
+
+        h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            max-width: 750px;
+            color: #d9e1ef;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem 3rem;
+        }
+
+        section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+        }
+
+        .code {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .code code {
+            white-space: pre;
+        }
+
+        .explanation {
+            background: #eef4ff;
+            border-left: 4px solid var(--accent);
+            padding: 0.8rem 1rem;
+            margin: 1rem 0;
+        }
+
+        /* =========================
+           1. Presence selector
+           [disabled]
+           ========================= */
+
+        [disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .presence-demo button {
+            padding: 0.7rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+            margin-right: 0.5rem;
+        }
+
+        /* =========================
+           2. Exact match
+           [type="email"]
+           ========================= */
+
+        input[type="email"] {
+            border: 2px solid var(--accent);
+        }
+
+        .form-demo input {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            padding: 0.7rem;
+            margin: 0.6rem 0;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        /* =========================
+           3. Substring matchers
+           ========================= */
+
+        .matcher-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .matcher {
+            padding: 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        /* ^= starts with */
+        .matcher[data-value^="https"] {
+            border-left: 5px solid var(--green);
+        }
+
+        /* $= ends with */
+        .matcher[data-value$=".pdf"] {
+            border-left: 5px solid var(--red);
+        }
+
+        /* *= contains */
+        .matcher[data-value*="grid"] {
+            border-left: 5px solid var(--purple);
+        }
+
+        /* =========================
+           4. Link demo
+           ========================= */
+
+        .link-demo a {
+            display: block;
+            width: fit-content;
+            margin: 0.7rem 0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* External links */
+        .link-demo a[href^="https"] {
+            color: var(--green);
+        }
+
+        /* Email links */
+        .link-demo a[href^="mailto:"] {
+            color: var(--purple);
+        }
+
+        /* PDF links */
+        .link-demo a[href$=".pdf"] {
+            color: var(--red);
+        }
+
+        /* Image links */
+        .link-demo a[href$=".png"],
+        .link-demo a[href$=".jpg"],
+        .link-demo a[href$=".webp"] {
+            color: var(--orange);
+        }
+
+        /* =========================
+           5. Data attributes
+           ========================= */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .status-card {
+            padding: 1.2rem;
+            border: 3px solid var(--border);
+            border-radius: 10px;
+            background: white;
+        }
+
+        .status-card[data-status="active"] {
+            border-color: var(--green);
+        }
+
+        .status-card[data-status="pending"] {
+            border-color: var(--orange);
+        }
+
+        .status-card[data-status="archived"] {
+            opacity: 0.6;
+        }
+
+        /* attr() displays the data-status value */
+        .status-card[data-status]::after {
+            content: attr(data-status);
+            display: block;
+            width: fit-content;
+            margin-top: 1rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background: #eef2f7;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           6. Case-insensitive match
+           ========================= */
+
+        [data-code="abc" i] {
+            border: 3px solid var(--accent);
+            background: #eef4ff;
+        }
+
+        .case-box {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin: 0.7rem 0;
+        }
+
+        /* =========================
+           7. Specificity
+           ========================= */
+
+        .specificity-demo {
+            padding: 1rem;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
+
+        .specificity-demo .example {
+            color: var(--purple);
+        }
+
+        .specificity-demo [data-color="blue"] {
+            color: var(--accent);
+        }
+
+        .specificity-demo p.example[data-color="blue"] {
+            color: var(--green);
+        }
+
+        .specificity-note {
+            background: #fff7ed;
+            border-left: 4px solid var(--orange);
+            padding: 0.8rem 1rem;
+        }
+
+        .takeaways li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            padding: 1rem;
+        }
+
+        @media (max-width: 700px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>CSS Attribute Selectors</h1>
+            <p>
+                A hands-on demonstration of presence, exact-match, substring,
+                data-attribute, case-insensitive, and specificity selectors.
+            </p>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- =========================================
+             1. Presence selector
+             ========================================= -->
+        <section>
+            <h2>1. Presence Selector: <code>[attribute]</code></h2>
+
+            <p>
+                A presence selector checks whether an element has an attribute,
+                regardless of its value.
+            </p>
+
+            <div class="code"><code>[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}</code></div>
+
+            <div class="presence-demo">
+                <button>Normal Button</button>
+                <button disabled>Disabled Button</button>
+            </div>
+
+            <div class="explanation">
+                <strong>What to notice:</strong>
+                The disabled button automatically becomes faded because CSS
+                detected the <code>disabled</code> attribute.
+            </div>
+        </section>
+
+        <!-- =========================================
+             2. Exact match
+             ========================================= -->
+        <section>
+            <h2>2. Exact Match: <code>[attribute="value"]</code></h2>
+
+            <p>
+                We can select an element when an attribute has an exact value.
+            </p>
+
+            <div class="code"><code>input[type="email"] {
+    border: 2px solid blue;
+}</code></div>
+
+            <div class="form-demo">
+                <label>
+                    Text input
+                    <input type="text" placeholder="type=text">
+                </label>
+
+                <label>
+                    Email input
+                    <input type="email" placeholder="type=email">
+                </label>
+
+                <label>
+                    Search input
+                    <input type="search" placeholder="type=search">
+                </label>
+            </div>
+
+            <div class="explanation">
+                <strong>What to notice:</strong>
+                Only the email input gets the blue border because its
+                <code>type</code> attribute exactly equals <code>email</code>.
+            </div>
+        </section>
+
+        <!-- =========================================
+             3. Substring matchers
+             ========================================= -->
+        <section>
+            <h2>3. Substring Matchers</h2>
+
+            <p>There are three especially useful substring matchers:</p>
+
+            <ul>
+                <li><code>^=</code> — starts with</li>
+                <li><code>$=</code> — ends with</li>
+                <li><code>*=</code> — contains</li>
+            </ul>
+
+            <div class="code"><code>[href^="https"]  /* starts with */
+[href$=".pdf"]   /* ends with */
+[class*="grid"]  /* contains */</code></div>
+
+            <div class="matcher-list">
+                <div class="matcher" data-value="https://example.com">
+                    <strong>Starts with:</strong>
+                    <code>https://example.com</code>
+                </div>
+
+                <div class="matcher" data-value="report.pdf">
+                    <strong>Ends with:</strong>
+                    <code>report.pdf</code>
+                </div>
+
+                <div class="matcher" data-value="my-grid-layout">
+                    <strong>Contains:</strong>
+                    <code>my-grid-layout</code>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <strong>Memory trick:</strong>
+                The arrow-like <code>^</code> points toward the beginning,
+                while <code>$</code> represents the end. The <code>*</code>
+                is broad and means the text can appear anywhere.
+            </div>
+        </section>
+
+        <!-- =========================================
+             4. Link styling
+             ========================================= -->
+        <section class="link-demo">
+            <h2>4. Practical Demo: Styling Links by Destination</h2>
+
+            <p>
+                Attribute selectors are especially useful for links because
+                the <code>href</code> already tells us what type of link it is.
+            </p>
+
+            <div class="code"><code>a[href^="https"] {
+    color: green;
+}
+
+a[href^="mailto:"] {
+    color: purple;
+}
+
+a[href$=".pdf"] {
+    color: red;
+}
+
+a[href$=".png"],
+a[href$=".jpg"],
+a[href$=".webp"] {
+    color: orange;
+}</code></div>
+
+            <a href="https://example.com">External Website</a>
+            <a href="mailto:test@example.com">Email the Team</a>
+            <a href="annual-report.pdf">Annual Report PDF</a>
+            <a href="photo.jpg">Photo JPG</a>
+
+            <div class="explanation">
+                <strong>What to notice:</strong>
+                No extra classes were added to these links. CSS reads the
+                <code>href</code> and automatically determines the styling.
+            </div>
+        </section>
+
+        <!-- =========================================
+             5. Data attributes
+             ========================================= -->
+        <section>
+            <h2>5. Data Attributes: <code>data-*</code></h2>
+
+            <p>
+                Custom data attributes can store information about an element.
+                CSS can then use those values to change the appearance of the element.
+            </p>
+
+            <div class="code"><code>&lt;div class="card" data-status="active"&gt;
+    Active Card
+&lt;/div&gt;
+
+.card[data-status="active"] {
+    border-color: green;
+}</code></div>
+
+            <div class="card-grid">
+                <div class="status-card" data-status="active">
+                    <h3>Active Card</h3>
+                    <p>This card has <code>data-status="active"</code>.</p>
+                </div>
+
+                <div class="status-card" data-status="pending">
+                    <h3>Pending Card</h3>
+                    <p>This card has <code>data-status="pending"</code>.</p>
+                </div>
+
+                <div class="status-card" data-status="archived">
+                    <h3>Archived Card</h3>
+                    <p>This card has <code>data-status="archived"</code>.</p>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <strong>What to notice:</strong>
+                The border and opacity change based entirely on the
+                <code>data-status</code> value. The badge underneath each card
+                is also generated with CSS using <code>attr(data-status)</code>.
+            </div>
+        </section>
+
+        <!-- =========================================
+             6. Case-insensitive matching
+             ========================================= -->
+        <section>
+            <h2>6. Case-Insensitive Matching: <code>i</code></h2>
+
+            <p>
+                The <code>i</code> flag tells CSS to ignore capitalization when
+                matching an attribute value.
+            </p>
+
+            <div class="code"><code>[data-code="abc" i] {
+    border: 3px solid blue;
+}</code></div>
+
+            <div class="case-box" data-code="abc">
+                <code>data-code="abc"</code>
+            </div>
+
+            <div class="case-box" data-code="ABC">
+                <code>data-code="ABC"</code>
+            </div>
+
+            <div class="case-box" data-code="AbC">
+                <code>data-code="AbC"</code>
+            </div>
+
+            <div class="explanation">
+                <strong>What to notice:</strong>
+                All three boxes match because the selector uses the
+                <code>i</code> case-insensitive flag.
+            </div>
+        </section>
+
+        <!-- =========================================
+             7. Specificity
+             ========================================= -->
+        <section>
+            <h2>7. Specificity</h2>
+
+            <p>
+                Attribute selectors have the same specificity weight as class selectors:
+            </p>
+
+            <div class="code"><code>Class selector:       .example
+Specificity:          0, 1, 0
+
+Attribute selector:   [data-color="blue"]
+Specificity:          0, 1, 0</code></div>
+
+            <div class="specificity-demo">
+                <p class="example">
+                    This paragraph has both a class and a data attribute.
+                </p>
+
+                <p class="example" data-color="blue">
+                    This one combines a class, an attribute, and an element selector.
+                </p>
+            </div>
+
+            <div class="specificity-note">
+                <strong>Key idea:</strong>
+                Attribute selectors can be combined with element selectors,
+                classes, and other attribute selectors. Combining selectors
+                increases specificity.
+            </div>
+        </section>
+
+        <!-- =========================================
+             Takeaways
+             ========================================= -->
+        <section>
+            <h2>Key Takeaways</h2>
+
+            <ul class="takeaways">
+                <li><code>[attr]</code> checks whether an attribute exists.</li>
+                <li><code>[attr="value"]</code> checks for an exact value.</li>
+                <li><code>^=</code> means starts with.</li>
+                <li><code>$=</code> means ends with.</li>
+                <li><code>*=</code> means contains.</li>
+                <li>Attribute selectors are great for styling links based on their destinations.</li>
+                <li><code>data-*</code> attributes can describe component state or variants.</li>
+                <li><code>attr()</code> can read an attribute value for generated content.</li>
+                <li>The <code>i</code> flag makes attribute matching case-insensitive.</li>
+                <li>Attribute selectors have the same basic specificity weight as classes: <code>0, 1, 0</code>.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        WDD 331R • Advanced CSS • Attribute Selectors
+    </footer>
+</body>
+</html>
