@@ -1,4 +1,37 @@
 /* Navigation component: .site-nav and its links
    Style the active link using aria-current. */
 
-/* TODO: Style the navigation */
+.site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-medium);
+    background: var(--color-surface);
+
+    ul {
+        display: flex;
+        gap: var(--space-medium);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a {
+        color: var(--color-primary);
+        text-decoration: none;
+
+        a:hover {
+            color: var(--color-accent);
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 3px;
+        }
+
+        a[aria-current="page"] {
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+    }
+}
