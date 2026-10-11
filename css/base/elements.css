@@ -1,0 +1,5 @@
+body { min-width: 320px; color: var(--color-text); background: var(--color-background); font-family: var(--font-body); font-size: var(--font-size-base); line-height: 1.6; }
+h1, h2, h3 { color: var(--color-heading); font-family: var(--font-display); line-height: 1.15; }
+a { color: var(--color-primary); font-weight: 700; text-underline-offset: 0.2em; }
+a:hover, a:focus-visible { color: var(--color-primary-dark); }
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
