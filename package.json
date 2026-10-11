@@ -2,6 +2,14 @@
   "name": "advancedcss-portfolio",
   "version": "1.0.0",
   "private": true,
-  "scripts": { "build": "postcss css/main.css --use postcss-import --use cssnano --output dist/styles.css" },
-  "devDependencies": { "cssnano": "^7.0.6", "postcss-cli": "^11.0.1", "postcss-import": "^16.1.0" }
+  "scripts": {
+    "build": "postcss css/main.css --output dist/styles.css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.6.1",
+    "cssnano": "^7.1.9",
+    "postcss": "^8.5.29",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.2.0"
+  }
 }
