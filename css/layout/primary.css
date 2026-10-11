@@ -1,21 +1,39 @@
-.site-shell { width: min(calc(100% - 2rem), var(--content-width)); margin-inline: auto; }
-  .site-header { padding-block: var(--space-md); border-bottom: 1px solid var(--color-border); }
-.intro { max-width: 42rem; padding-block: var(--space-xl) var(--space-lg); }
-.intro h2, .work-nav h2 { margin-bottom: var(--space-sm); }
-.intro p { color: var(--color-muted); }
-.work-nav { padding-bottom: var(--space-xl); }
-.work-list { display: grid; gap: var(--space-sm); max-width: 42rem; }
-  .site-nav, .nav-links, .hero-actions, .section-heading, .site-footer { display: flex; align-items: center; }
-  .site-nav, .section-heading, .site-footer { justify-content: space-between; gap: var(--space-md); }
-  .nav-links { flex-wrap: wrap; gap: var(--space-md); }
-  .hero { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.6fr); gap: var(--space-xl); align-items: center; padding-block: var(--space-xl); }
-  .hero-copy { max-width: 42rem; }
-  .hero-copy h1 { margin-block: var(--space-sm) var(--space-md); font-size: clamp(2.6rem, 7vw, 5.5rem); }
-  .hero-copy p { max-width: 38rem; color: var(--color-muted); font-size: clamp(1.05rem, 2vw, 1.25rem); }
-  .hero-actions { flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-lg); }
-  .section { padding-block: var(--space-lg); }
-  .section-heading { margin-bottom: var(--space-lg); }
-  .section-heading p { color: var(--color-muted); }
-  .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: var(--space-lg); }
-  .site-footer { margin-top: var(--space-xl); padding-block: var(--space-lg); border-top: 1px solid var(--color-border); color: var(--color-muted); }
-@media (max-width: 42rem) { .site-nav, .site-footer, .section-heading { align-items: flex-start; flex-direction: column; } .hero { grid-template-columns: 1fr; } }
+.shell {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.intro {
+  max-width: 650px;
+  padding: var(--space-lg) 0;
+}
+
+.intro h2, .work-nav h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.intro p {
+  color: var(--color-muted);
+}
+
+.work-nav {
+  padding-bottom: var(--space-lg);
+}
+
+.work-list {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 650px;
+}
+
+@media (max-width: 600px) {
+  .site-shell {
+    width: 90%;
+  }
+}
