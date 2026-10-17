@@ -13,30 +13,8 @@ This repository is my portfolio for WDD 331R: Advanced CSS. The homepage is the 
 - [Attribute Selectors Demo](unit2/attribute-selectors-demo.html)
 - [Layered Components](unit2/layered-components/index.html)
 
-## Architecture
 
-```text
-css/
-├── base/          reset.css, elements.css
-├── components/    portfolio.css
-├── layout/        primary.css
-├── tokens/        colors.css, variables.css
-├── utilities/     utilities.css
-└── main.css       layer order and imports
-dist/styles.css    bundled build receipt
-```
+## Theme support
 
-The source stylesheet starts with the five-layer stack `tokens, base, layout, components, utilities`. Each layer is imported from `css/main.css`, so the browser loads the same shared token system and component styles used by the homepage.
+The site now supports light mode, dark mode, and your system default option. Color seeds, the OKLCH accent ramp, and semantic `light-dark()` tokens live in `css/tokens/colors.css`. The theme styles are in `css/components/theme-toggle.css`, and `js/theme-preference.js` saves the selected preference in `localStorage` so it remains when any user returns the site still has their preference for the theme still active.
 
-## Build
-
-This project uses PostCSS with `postcss-import` to bundle imports and `cssnano` to minify the result.
-
-```bash
-npm install
-npm run build
-```
-
-The build reads `css/main.css` and writes the minified receipt to `dist/styles.css`. `node_modules/` is ignored, while `dist/styles.css` is intentionally tracked for GitHub reviewers.
-
-For GitHub Pages, select **Deploy from a Branch**, choose the `website` branch, and choose the repository root (`/`). The current remote contains only `main`, so the existing Unit 1 workflow/branch still needs to be restored or created in GitHub before that setting can be selected.

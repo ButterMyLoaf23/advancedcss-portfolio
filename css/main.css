@@ -6,4 +6,5 @@
 @import url("base/elements.css") layer(base);
 @import url("layout/primary.css") layer(layout);
 @import url("components/portfolio.css") layer(components);
+@import url("components/theme-toggle.css") layer(components);
 @import url("utilities/utilities.css") layer(utilities);

@@ -1,8 +1,26 @@
 :root {
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 2rem;
-  --font-body: Arial, Helvetica, sans-serif;
+  --font-family-sans: system-ui, sans-serif;
+  --font-family-mono: monospace;
+  --font-size-sm: 1.4rem;
+  --font-size-md: 1.6rem;
+  --font-size-lg: 1.8rem;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --transition-base: 0.2s ease;
+  --icon-size-sm: 24px;
+  --icon-size-md: 32px;
+  --outline-width: 2px;
+
+  /* Names from the previous unit remain available while the site migrates. */
+  --space-sm: var(--spacing-sm);
+  --space-md: var(--spacing-md);
+  --space-lg: var(--spacing-lg);
+  --font-body: var(--font-family-sans);
   --font-size-base: 1rem;
-  --radius-sm: 0.25rem;
 }

@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Boston Wyatt's WDD 331R Advanced CSS portfolio.">
     <title>Boston Wyatt | Advanced CSS Portfolio</title>
-    <link rel="stylesheet" href="dist/styles.css">
+    <script src="js/theme-preference.js"></script>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <header class="site-header">
         <div class="shell">
             <h1>Boston Wyatt</h1>
             <p>Advanced CSS Portfolio</p>
+            <details class="theme-menu">
+                <summary class="theme-control"><span class="visually-hidden">Color scheme</span></summary>
+                <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                    <label class="theme-control theme-pick" data-theme-pick="light"><input name="theme-preference" type="radio" value="light"><span aria-hidden="true">&#9788;</span><span class="visually-hidden">Light</span></label>
+                    <label class="theme-control theme-pick" data-theme-pick="system"><input name="theme-preference" type="radio" value="system" checked><span aria-hidden="true">&#9881;</span><span class="visually-hidden">System default</span></label>
+                    <label class="theme-control theme-pick" data-theme-pick="dark"><input name="theme-preference" type="radio" value="dark"><span aria-hidden="true">&#9681;</span><span class="visually-hidden">Dark</span></label>
+                </div>
+            </details>
         </div>
     </header>
 
@@ -21,7 +30,7 @@
             <p>This is my portfolio for Advanced CSS. Use the links below to view my assignments and practice work.</p>
         </section>
 
-        <nav class="work-nav">
+        <nav class="work-nav" aria-label="Course assignments">
             <h2>Assignments</h2>
             <ul class="work-list">
                 <li><a class="work-link" href="unit1/custom-properties/Index.html">Custom Properties: Ward Activity Board</a></li>

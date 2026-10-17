@@ -1,0 +1,68 @@
+details.theme-menu {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: inline-block;
+  transform: translateY(-50%);
+}
+
+.theme-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  padding: var(--spacing-xs);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+summary.theme-control {
+  list-style: none;
+  font-size: var(--icon-size-sm);
+}
+
+summary.theme-control::-webkit-details-marker {
+  display: none;
+}
+
+summary.theme-control::before {
+  content: "\2699";
+}
+
+details.theme-menu[open] summary.theme-control::before {
+  content: "\2600";
+}
+
+.theme-control:hover,
+.theme-control:focus-visible {
+  background: var(--color-accent-soft);
+}
+
+.theme-extra {
+  position: absolute;
+  top: calc(100% + var(--spacing-sm));
+  right: 0;
+  z-index: 2;
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-pick input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.theme-pick:has(input:checked) {
+  background: var(--color-accent);
+  color: var(--header-text);
+}
