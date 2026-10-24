@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive demo of filter and backdrop-filter performance."
+    >
+    <title>Filter Performance Lab | Boston Wyatt</title>
+    <script src="../../js/theme-preference.js"></script>
+    <script src="../../js/filter-performance.js" defer></script>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body class="effects-page">
+    <nav class="site-nav">
+        <a href="index.html">&larr; Visual effects</a>
+        <ul>
+            <li><a href="index.html">Showcase</a></li>
+            <li><a href="#performance-lab" aria-current="page">Performance</a></li>
+        </ul>
+        <details class="theme-menu">
+            <summary class="theme-control"><span class="visually-hidden">Color scheme</span></summary>
+            <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                <label class="theme-control theme-pick" data-theme-pick="light"><input name="theme-preference" type="radio" value="light"><span aria-hidden="true">☀</span><span class="visually-hidden">Light</span></label>
+                <label class="theme-control theme-pick" data-theme-pick="system"><input name="theme-preference" type="radio" value="system" checked><span aria-hidden="true">⚙</span><span class="visually-hidden">System default</span></label>
+                <label class="theme-control theme-pick" data-theme-pick="dark"><input name="theme-preference" type="radio" value="dark"><span aria-hidden="true">☾</span><span class="visually-hidden">Dark</span></label>
+            </div>
+        </details>
+    </nav>
+    <header class="hero" id="effects">
+        <img class="hero-image" src="https://picsum.photos/seed/performance-hero/1200/500" alt="Light moving across a mountain landscape">
+        <div class="hero-content">
+            <h1>Filter performance lab</h1>
+            <p>Small experiments for understanding when blur is worth the cost.</p>
+        </div>
+    </header>
+    <main>
+        <section class="performance-lab" id="performance-lab" aria-labelledby="performance-title">
+            <div class="section-heading">
+                <p class="eyebrow">Choose topic: filter performance</p>
+                <h2 id="performance-title">How expensive is an effect?</h2>
+                <p>Filters are usually fine when they are small and still. The cost grows when the browser has to blur a large area, especially when that area changes on every frame.</p>
+            </div>
+            <div class="demo-controls">
+                <label for="blur-range">Blur strength: <output id="blur-value">12px</output></label>
+                <input id="blur-range" type="range" min="0" max="32" value="12" step="1">
+                <label class="motion-toggle">
+                    <input id="motion-toggle" type="checkbox">
+                    Animate the filter
+                </label>
+            </div>
+            <div class="performance-demos">
+                <article class="performance-demo">
+                    <p class="demo-label">Usually inexpensive</p>
+                    <h3>Small image filter</h3>
+                    <div class="demo-thumbnail">
+                        <img src="https://picsum.photos/seed/performance-thumbnail/320/180" alt="Small mountain thumbnail">
+                    </div>
+                    <p><code>filter</code> blurs only this small image. It paints to its own buffer and is normally a safe choice.</p>
+                </article>
+                <article class="performance-demo backdrop-demo">
+                    <p class="demo-label">Test on real devices</p>
+                    <h3>Backdrop glass</h3>
+                    <div class="demo-scene">
+                        <img src="https://picsum.photos/seed/performance-scene/600/260" alt="Colorful scene behind a glass panel">
+                        <div class="demo-glass">The browser blurs what is behind this panel.</div>
+                    </div>
+                    <p><code>backdrop-filter</code> composites the background first, then filters it. Keep the area and blur radius reasonable.</p>
+                </article>
+                <article class="performance-demo">
+                    <p class="demo-label">Cheaper fallback</p>
+                    <h3>Solid overlay</h3>
+                    <div class="demo-scene fallback-scene">
+                        <img src="https://picsum.photos/seed/performance-fallback/600/260" alt="Colorful scene behind a solid overlay">
+                        <div class="demo-solid">No blur calculation needed.</div>
+                    </div>
+                    <p>A semi-transparent color gives up the frosted detail, but it is predictable on slower devices.</p>
+                </article>
+            </div>
+            <div class="measurement-notes">
+                <h3>How I would check the cost</h3>
+                <ol>
+                    <li>Turn on <strong>Show paint flashing</strong> from the DevTools command palette, then scroll the page.</li>
+                    <li>Record a few seconds in the Performance panel while scrolling, hovering, and animating.</li>
+                    <li>Look for frames over 16ms. Paint points to repaints; Composite Layers points to layer pressure.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; 2026 Boston Wyatt</p>
+    </footer>
+</body>
+</html>

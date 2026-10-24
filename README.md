@@ -13,6 +13,7 @@ This repository is my portfolio for WDD 331R: Advanced CSS. The homepage is the 
 - [Attribute Selectors Demo](unit2/attribute-selectors-demo.html)
 - [Layered Components](unit2/layered-components/index.html)
 - [Visual Effects Showcase](unit3/visual-effects/index.html)
+- [Filter Performance Lab](unit3/visual-effects/performance.html)
 
 
 ## Theme support

@@ -61,6 +61,153 @@
   margin-inline: auto;
 }
 
+.effects-page .performance-lab {
+  --demo-blur: 12px;
+  padding: clamp(var(--spacing-lg), 5vw, 48px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.effects-page .section-heading {
+  max-width: 680px;
+}
+
+.effects-page .eyebrow,
+.effects-page .demo-label {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.effects-page .section-heading h2 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.effects-page .section-heading > p:last-child,
+.effects-page .performance-demo > p:last-child {
+  color: var(--color-text-muted);
+}
+
+.effects-page .demo-controls {
+  display: grid;
+  gap: var(--spacing-sm);
+  max-width: 480px;
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-md);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.effects-page .demo-controls label {
+  font-weight: 650;
+}
+
+.effects-page .demo-controls output {
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.effects-page .motion-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 400 !important;
+}
+
+.effects-page .performance-demos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.effects-page .performance-demo {
+  min-width: 0;
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.effects-page .performance-demo h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+.effects-page .demo-thumbnail,
+.effects-page .demo-scene {
+  position: relative;
+  min-height: 150px;
+  margin-bottom: var(--spacing-md);
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.effects-page .demo-thumbnail img,
+.effects-page .demo-scene > img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.effects-page .demo-thumbnail img {
+  filter: blur(var(--demo-blur));
+}
+
+.effects-page .demo-glass,
+.effects-page .demo-solid {
+  position: absolute;
+  inset: 20% 8%;
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-sm);
+  color: var(--color-text);
+  text-align: center;
+  border: 1px solid light-dark(rgb(255 255 255 / 0.75), rgb(255 255 255 / 0.2));
+  border-radius: var(--radius-md);
+}
+
+.effects-page .demo-glass {
+  background: light-dark(rgb(255 255 255 / 0.52), rgb(15 23 42 / 0.58));
+  backdrop-filter: blur(var(--demo-blur)) saturate(1.3);
+}
+
+.effects-page .demo-solid {
+  background: light-dark(rgb(255 255 255 / 0.82), rgb(15 23 42 / 0.82));
+}
+
+.effects-page .performance-lab.is-animating .demo-thumbnail img,
+.effects-page .performance-lab.is-animating .demo-glass {
+  animation: demo-filter-pulse 1.8s ease-in-out infinite alternate;
+}
+
+.effects-page .measurement-notes {
+  max-width: 760px;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.effects-page .measurement-notes h3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.effects-page .measurement-notes ol {
+  display: grid;
+  gap: var(--spacing-sm);
+  padding-left: 1.4rem;
+  color: var(--color-text-muted);
+}
+
+@keyframes demo-filter-pulse {
+  from { filter: blur(0); }
+  to { filter: blur(var(--demo-blur)); }
+}
+
 .effects-page .hero {
   position: relative;
   isolation: isolate;
@@ -257,13 +404,20 @@
   .effects-page .cards {
     grid-template-columns: 1fr;
   }
+
+  .effects-page .performance-demos {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .effects-page .card,
   .effects-page .card-image,
-  .effects-page .icon-item {
+  .effects-page .icon-item,
+  .effects-page .performance-lab.is-animating .demo-thumbnail img,
+  .effects-page .performance-lab.is-animating .demo-glass {
     transition: none;
+    animation: none;
   }
 
   .effects-page .glass-panel {
