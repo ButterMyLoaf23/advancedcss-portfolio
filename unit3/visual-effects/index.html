@@ -16,6 +16,14 @@
             <li><a href="#effects" aria-current="page">Hero</a></li>
             <li><a href="#about">Glass</a></li>
         </ul>
+        <details class="theme-menu">
+            <summary class="theme-control"><span class="visually-hidden">Color scheme</span></summary>
+            <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                <label class="theme-control theme-pick" data-theme-pick="light"><input name="theme-preference" type="radio" value="light"><span aria-hidden="true">☀</span><span class="visually-hidden">Light</span></label>
+                <label class="theme-control theme-pick" data-theme-pick="system"><input name="theme-preference" type="radio" value="system" checked><span aria-hidden="true">⚙</span><span class="visually-hidden">System default</span></label>
+                <label class="theme-control theme-pick" data-theme-pick="dark"><input name="theme-preference" type="radio" value="dark"><span aria-hidden="true">☾</span><span class="visually-hidden">Dark</span></label>
+            </div>
+        </details>
     </nav>
     <header class="hero" id="effects">
         <img class="hero-image" src="https://picsum.photos/seed/hero-effects/1200/500" alt="Misty mountain landscape">

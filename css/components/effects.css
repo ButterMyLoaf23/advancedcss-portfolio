@@ -27,6 +27,26 @@
   flex-wrap: wrap;
   gap: var(--spacing-lg);
   justify-content: flex-end;
+  margin-left: auto;
+}
+
+.effects-page details.theme-menu {
+  position: relative;
+  top: auto;
+  right: auto;
+  flex: 0 0 auto;
+  transform: none;
+}
+
+.effects-page details.theme-menu .theme-control {
+  color: var(--color-text);
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.effects-page details.theme-menu .theme-control:hover,
+.effects-page details.theme-menu .theme-control:focus-visible {
+  color: var(--color-accent);
 }
 
 .effects-page .site-nav a:hover,
