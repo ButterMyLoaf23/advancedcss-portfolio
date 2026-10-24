@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A small collection of CSS visual effects by Boston Wyatt.">
+    <title>Playing with Visual Effects | Boston Wyatt</title>
+    <script src="../../js/theme-preference.js"></script>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body class="effects-page">
+    <nav class="site-nav">
+        <a href="../../index.html">&larr; Boston's portfolio</a>
+        <ul>
+            <li><a href="#cards">Cards</a></li>
+            <li><a href="#effects" aria-current="page">Hero</a></li>
+            <li><a href="#about">Glass</a></li>
+        </ul>
+    </nav>
+    <header class="hero" id="effects">
+        <img class="hero-image" src="https://picsum.photos/seed/hero-effects/1200/500" alt="Misty mountain landscape">
+        <div class="hero-content">
+            <h1>Visual effects</h1>
+        </div>
+    </header>
+    <main>
+        <section class="card-section" id="cards">
+            <h2>Cards with a little lift</h2>
+            <div class="cards">
+                <article class="card">
+                    <img class="card-image" src="https://picsum.photos/seed/card-1/400/250" alt="Sunlit mountain ridge">
+                    <div class="card-body">
+                        <h3>Layered shadows</h3>
+                        <p>I used a couple of shadow layers here instead of one heavy outline. It gives the card a softer edge.</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img class="card-image" src="https://picsum.photos/seed/card-2/400/250" alt="Coastal landscape">
+                    <div class="card-body">
+                        <h3>A quiet gradient</h3>
+                        <p>The background has a very light gradient.</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img class="card-image" src="https://picsum.photos/seed/card-3/400/250" alt="Forest path">
+                    <div class="card-body">
+                        <h3>Color on hover</h3>
+                        <p>The photo starts off a little blurry and becomes normal when you hover over the card.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="glass-section" id="about">
+            <div class="glass-background">
+                <img src="https://picsum.photos/seed/glass-bg/1200/400" alt="Colorful background behind glass panel" class="glass-bg-image">
+            </div>
+            <div class="glass-panel">
+                <h2>Frosted Glass</h2>
+            </div>
+        </section>
+        <section class="icon-section">
+            <h2>Shadows that follow the shape</h2>
+            <p>These icons use <code>drop-shadow()</code>, so the shadow follows the actual icon instead of making a box around it.</p>
+            <div class="icon-row" aria-label="Decorative icon examples">
+                <img class="icon-item" src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/heart.svg" alt="Heart icon">
+                <img class="icon-item" src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/star.svg" alt="Star icon">
+                <img class="icon-item" src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/bookmark.svg" alt="Bookmark icon">
+                <img class="icon-item" src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/message-circle.svg" alt="Message icon">
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; 2026 Boston Wyatt</p>
+    </footer>
+</body>
+</html>

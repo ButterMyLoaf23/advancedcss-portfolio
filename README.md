@@ -12,6 +12,7 @@ This repository is my portfolio for WDD 331R: Advanced CSS. The homepage is the 
 - [Custom Properties — Ward Activity Board](unit1/custom-properties/Index.html)
 - [Attribute Selectors Demo](unit2/attribute-selectors-demo.html)
 - [Layered Components](unit2/layered-components/index.html)
+- [Visual Effects Showcase](unit3/visual-effects/index.html)
 
 
 ## Theme support
