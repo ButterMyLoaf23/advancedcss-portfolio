@@ -162,10 +162,12 @@
 .writing-mode-grid .vertical-rl {
     /* These examples make the block and inline axes visible in the browser. */
     writing-mode: vertical-rl;
+    text-orientation: upright;
 }
 
 .writing-mode-grid .vertical-lr {
     writing-mode: vertical-lr;
+    text-orientation: upright;
 }
 
 .logical-footer {

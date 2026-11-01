@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A demonstration of CSS logical properties and writing modes.">
     <title>Logical Properties | Advanced CSS Portfolio</title>
+    <!-- I kept the shared styles first so this assignment uses the same portfolio tokens. -->
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -59,11 +60,12 @@
             </div>
         </section>
 
-        <section class="writing-modes" aria-labelledby="writing-title">
+        <!-- Keep these examples LTR so the direction demo does not rotate them. -->
+        <section class="writing-modes" dir="ltr" aria-labelledby="writing-title">
             <h2 id="writing-title">Vertical writing modes</h2>
             <div class="writing-mode-grid">
-                <p class="vertical-rl">縦書きの日本語テキストです。右から左へ読みます。</p>
-                <p class="vertical-lr">这是垂直的中文文字。从左到右阅读。</p>
+                <p class="vertical-rl">&#x7E26;&#x66F8;&#x304D;&#x306E;&#x65E5;&#x672C;&#x8A9E;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x3067;&#x3059;&#x3002;&#x53F3;&#x304B;&#x3089;&#x5DE6;&#x3078;&#x8AAD;&#x307F;&#x307E;&#x3059;&#x3002;</p>
+                <p class="vertical-lr">&#x8FD9;&#x662F;&#x5782;&#x76F4;&#x7684;&#x4E2D;&#x6587;&#x6587;&#x5B57;&#x3002;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x9605;&#x8BFB;&#x3002;</p>
                 <p>Horizontal writing is the default, but the same logical properties still describe each element relative to its own flow.</p>
             </div>
         </section>
