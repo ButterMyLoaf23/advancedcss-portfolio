@@ -1,0 +1,73 @@
+.articles-page {
+    min-block-size: 100vh;
+    padding: clamp(var(--spacing-lg), 6vw, 64px) 5vw;
+}
+
+.articles-page header,
+.articles-page main {
+    inline-size: min(100%, 1100px);
+    margin-inline: auto;
+}
+
+.articles-page header {
+    margin-block-end: var(--spacing-xl);
+    text-align: center;
+}
+
+.articles-page header h1 {
+    margin-block-end: var(--spacing-sm);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.articles-page header p {
+    color: var(--color-muted);
+}
+
+.articles-page .card-grid {
+    /* min() keeps a card from forcing horizontal scrolling on very narrow screens. */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: var(--spacing-lg);
+}
+
+.articles-page .card {
+    /* I used a column flex layout so the card body can fill the remaining height. */
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.articles-page .card div:first-child {
+    flex: 0 0 150px;
+    background:
+        linear-gradient(135deg, var(--accent-300), var(--accent-600)),
+        var(--color-accent);
+}
+
+.articles-page .card div:last-child {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+}
+
+.articles-page .card h2 {
+    font-size: var(--font-size-lg);
+}
+
+.articles-page .card p {
+    color: var(--color-muted);
+}
+
+.articles-page .card a {
+    /* This pushes every Read more link to the bottom of its card. */
+    margin-block-start: auto;
+    font-weight: 700;
+}

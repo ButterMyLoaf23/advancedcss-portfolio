@@ -14,6 +14,9 @@ This repository is my portfolio for WDD 331R: Advanced CSS. The homepage is the 
 - [Layered Components](unit2/layered-components/index.html)
 - [Visual Effects Showcase](unit3/visual-effects/index.html)
 - [Filter Performance Lab](unit3/visual-effects/performance.html)
+<!-- I added these Unit 4 pages so the README matches the homepage links. -->
+- [Editorial Grid Layout](unit-4/grid-layouts/editorial.html)
+- [Responsive Card Grid](unit-4/grid-layouts/cards.html)
 
 
 ## Theme support

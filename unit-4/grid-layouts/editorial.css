@@ -1,0 +1,143 @@
+.editorial-page {
+    /* I kept the page padding a variable so the article has room on smaller screens. */
+    min-block-size: 100vh;
+    padding: var(--spacing-lg) 5vw;
+}
+
+.editorial-page header,
+.editorial-page footer,
+.editorial-page .layout {
+    inline-size: min(100%, 1100px);
+    margin-inline: auto;
+}
+
+.editorial-page header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    padding-block: var(--spacing-md);
+    border-block: 1px solid var(--color-border);
+}
+
+.editorial-page header > a {
+    color: var(--color-text);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.editorial-page nav {
+    /* Flexbox works well here because the nav links just need to stay in one row. */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.editorial-page .layout {
+    /* The layout starts stacked, which keeps the article readable on small screens. */
+    display: grid;
+    grid-template-areas:
+        "main"
+        "sidebar";
+    gap: var(--spacing-xl);
+    padding-block: clamp(var(--spacing-lg), 6vw, 64px);
+}
+
+.editorial-page main {
+    grid-area: main;
+    min-inline-size: 0;
+}
+
+.editorial-page article {
+    max-inline-size: 70ch;
+}
+
+.editorial-page article h1 {
+    margin-block-end: var(--spacing-sm);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.05;
+}
+
+.editorial-page article h2 {
+    margin-block: var(--spacing-xl) var(--spacing-sm);
+}
+
+.editorial-page article p {
+    margin-block-end: var(--spacing-md);
+}
+
+.editorial-page .byline {
+    color: var(--color-muted);
+    font-size: var(--font-size-sm);
+}
+
+.editorial-page blockquote {
+    margin-block: var(--spacing-xl);
+    padding-block: var(--spacing-md);
+    padding-inline: var(--spacing-lg);
+    border-inline-start: 4px solid var(--color-accent);
+    color: var(--color-muted);
+    font-size: var(--font-size-lg);
+    font-style: italic;
+}
+
+.editorial-page aside {
+    grid-area: sidebar;
+    align-self: start;
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.editorial-page aside section + section {
+    margin-block-start: var(--spacing-xl);
+}
+
+.editorial-page aside h2 {
+    margin-block-end: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+.editorial-page aside ul {
+    display: grid;
+    gap: var(--spacing-sm);
+    padding-inline-start: var(--spacing-lg);
+}
+
+.editorial-page .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    padding-inline-start: 0;
+    list-style: none;
+}
+
+.editorial-page .tags li {
+    padding-block: var(--spacing-xs);
+    padding-inline: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-size: var(--font-size-sm);
+}
+
+.editorial-page > footer {
+    padding-block: var(--spacing-lg);
+    border-block-start: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: var(--font-size-sm);
+    text-align: center;
+}
+
+@media (min-width: 760px) {
+    .editorial-page .layout {
+        /* Named areas make it clear that the sidebar moves to the right at this size. */
+        grid-template-columns: minmax(0, 1fr) 260px;
+        grid-template-areas: "main sidebar";
+        align-items: start;
+    }
+}
