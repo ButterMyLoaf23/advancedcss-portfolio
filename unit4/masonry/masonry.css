@@ -1,0 +1,147 @@
+.masonry-page {
+    min-block-size: 100vh;
+    padding-block: var(--spacing-lg);
+    padding-inline: 5vw;
+}
+
+.masonry-header,
+.masonry-page main,
+.masonry-footer {
+    inline-size: min(100%, 1100px);
+    margin-inline: auto;
+}
+
+.masonry-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    padding-block-end: var(--spacing-md);
+    border-block-end: 1px solid var(--color-border);
+}
+
+.masonry-header a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.masonry-page .intro {
+    max-inline-size: 760px;
+    padding-block: clamp(var(--spacing-xl), 8vw, 80px);
+}
+
+.masonry-page h1 {
+    margin-block: var(--spacing-sm) var(--spacing-md);
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
+.demo-section {
+    margin-block-end: clamp(var(--spacing-xl), 8vw, 80px);
+}
+
+.section-heading {
+    max-inline-size: 760px;
+    margin-block-end: var(--spacing-lg);
+}
+
+.section-heading h2 {
+    margin-block: var(--spacing-sm);
+}
+
+.section-heading p:last-child {
+    color: var(--color-muted);
+}
+
+.demo-card {
+    min-inline-size: 0;
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.demo-card h3 {
+    margin-block-end: var(--spacing-sm);
+}
+
+.demo-card p {
+    color: var(--color-muted);
+}
+
+.standard-grid,
+.native-masonry {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: var(--spacing-md);
+}
+
+.columns-demo {
+    column-count: 3;
+    column-gap: var(--spacing-md);
+}
+
+.columns-demo .demo-card {
+    break-inside: avoid;
+    margin-block-end: var(--spacing-md);
+}
+
+.masonry-demo {
+    min-block-size: 120px;
+}
+
+.masonry-demo .masonry-item {
+    inline-size: calc((100% - (2 * var(--spacing-md))) / 3);
+    margin-block-end: var(--spacing-md);
+}
+
+/* This is the readable fallback for browsers that do not support grid-lanes. */
+.native-masonry {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* The native feature is still experimental, so I only use it when the browser confirms support. */
+@supports (display: grid-lanes) {
+    .native-masonry {
+        display: grid-lanes;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.masonry-footer {
+    padding-block-start: var(--spacing-lg);
+    border-block-start: 1px solid var(--color-border);
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+    .standard-grid,
+    .native-masonry {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .columns-demo {
+        column-count: 2;
+    }
+
+    .masonry-demo .masonry-item {
+        inline-size: calc((100% - var(--spacing-md)) / 2);
+    }
+}
+
+@media (max-width: 520px) {
+    .standard-grid,
+    .native-masonry {
+        grid-template-columns: 1fr;
+    }
+
+    .columns-demo {
+        column-count: 1;
+    }
+
+    .masonry-demo .masonry-item {
+        inline-size: 100%;
+    }
+}

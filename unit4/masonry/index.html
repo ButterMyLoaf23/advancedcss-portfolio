@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comparison of CSS grid, columns, Masonry.js, and future grid-lanes layout.">
+    <title>Masonry Layouts | Advanced CSS Portfolio</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="masonry.css">
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" defer></script>
+    <script src="masonry.js" defer></script>
+</head>
+<body class="masonry-page">
+    <header class="masonry-header">
+        <a href="../../index.html">&larr; Boston's portfolio</a>
+        <p>Unit 4: Masonry Layouts</p>
+    </header>
+
+    <main>
+        <section class="intro" aria-labelledby="masonry-title">
+            <p class="eyebrow">Variable-height content</p>
+            <h1 id="masonry-title">Understanding masonry layouts</h1>
+            <p>A masonry layout keeps strict columns but packs items upward when their heights are different. I built a few versions below to compare the tradeoffs.</p>
+        </section>
+
+        <section class="demo-section" aria-labelledby="grid-title">
+            <div class="section-heading">
+                <p class="eyebrow">The problem</p>
+                <h2 id="grid-title">A standard grid leaves gaps</h2>
+                <p>CSS Grid is great when rows should line up, but the tallest card controls each row. The empty space below shorter cards is the gap masonry tries to remove.</p>
+            </div>
+            <div class="standard-grid">
+                <article class="demo-card"><h3>Short card</h3><p>This card has only a little content.</p></article>
+                <article class="demo-card"><h3>Taller card</h3><p>This card has more text, so the whole row becomes taller even though the first card does not need the extra space.</p></article>
+                <article class="demo-card"><h3>Another card</h3><p>The next row starts after the tallest item above it.</p></article>
+                <article class="demo-card"><h3>Longer explanation</h3><p>Variable-height content makes the difference easier to see. A regular grid keeps every item aligned to shared row tracks, which creates empty areas.</p></article>
+            </div>
+        </section>
+
+        <section class="demo-section" aria-labelledby="columns-title">
+            <div class="section-heading">
+                <p class="eyebrow">The old CSS-only workaround</p>
+                <h2 id="columns-title">CSS columns pack tightly</h2>
+                <p><code>column-count</code> makes this look like masonry, but content flows down one column before moving to the next. That can make the visual order and keyboard reading order feel disconnected.</p>
+            </div>
+            <div class="columns-demo">
+                <article class="demo-card"><h3>Item 1</h3><p>Short content.</p></article>
+                <article class="demo-card"><h3>Item 2</h3><p>This item is taller so the next item starts lower in the same column.</p></article>
+                <article class="demo-card"><h3>Item 3</h3><p>It still follows the DOM order, but the visual path goes down instead of across.</p></article>
+                <article class="demo-card"><h3>Item 4</h3><p>Columns can be useful for decorative galleries, but sequence matters for article content.</p></article>
+                <article class="demo-card"><h3>Item 5</h3><p>Here is another variable-height item.</p></article>
+                <article class="demo-card"><h3>Item 6</h3><p>The browser fills the next available column automatically.</p></article>
+            </div>
+        </section>
+
+        <section class="demo-section" aria-labelledby="js-title">
+            <div class="section-heading">
+                <p class="eyebrow">Works today</p>
+                <h2 id="js-title">Masonry.js keeps the order and packs the items</h2>
+                <p>This live demo uses Masonry.js to measure each card and place it in the shortest column. The items remain in normal DOM order.</p>
+            </div>
+            <div class="masonry-demo">
+                <article class="demo-card masonry-item"><h3>Item 1</h3><p>Short content.</p></article>
+                <article class="demo-card masonry-item"><h3>Item 2</h3><p>This card has enough content to make the difference between a regular row and a packed column visible.</p></article>
+                <article class="demo-card masonry-item"><h3>Item 3</h3><p>A medium-height item.</p></article>
+                <article class="demo-card masonry-item"><h3>Item 4</h3><p>Masonry.js places this card where the most space is available after the earlier cards are measured.</p></article>
+                <article class="demo-card masonry-item"><h3>Item 5</h3><p>Short again.</p></article>
+                <article class="demo-card masonry-item"><h3>Item 6</h3><p>This one is longer so the packing behavior is easier to compare.</p></article>
+            </div>
+        </section>
+
+        <section class="demo-section" aria-labelledby="native-title">
+            <div class="section-heading">
+                <p class="eyebrow">Future native CSS</p>
+                <h2 id="native-title">The grid-lanes idea</h2>
+                <p>The proposed native syntax keeps strict column lanes while allowing the row axis to pack. It is not ready for stable production browsers, so this section uses a regular grid fallback.</p>
+            </div>
+            <div class="native-masonry">
+                <article class="demo-card"><h3>Native item 1</h3><p>This is the fallback version in browsers without grid-lanes.</p></article>
+                <article class="demo-card"><h3>Native item 2</h3><p>The fallback stays readable even though it does not pack as tightly.</p></article>
+                <article class="demo-card"><h3>Native item 3</h3><p>The browser support check keeps experimental syntax from breaking the page.</p></article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="masonry-footer">
+        <p><a href="../advanced/container-demo.html">Back to Unit 4 advanced demos</a></p>
+    </footer>
+</body>
+</html>
