@@ -104,6 +104,7 @@
     background: linear-gradient(145deg, var(--accent-300), var(--accent-700));
 }
 
+//
 .language-card__body {
     /* This accent follows the inline start instead of being locked to the left side. */
     padding-block: clamp(var(--spacing-lg), 5vw, 48px);
@@ -158,7 +159,7 @@
     border-radius: var(--radius-md);
     background: var(--color-surface);
 }
-
+//
 .writing-mode-grid .vertical-rl {
     /* These examples make the block and inline axes visible in the browser. */
     writing-mode: vertical-rl;

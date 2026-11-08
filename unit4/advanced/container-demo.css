@@ -1,0 +1,145 @@
+.container-demo-page,
+.sticky-demo-page {
+    min-block-size: 100vh;
+    padding-block: var(--spacing-lg);
+    padding-inline: 5vw;
+}
+
+.advanced-header,
+.container-demo-page main,
+.advanced-footer {
+    inline-size: min(100%, 1100px);
+    margin-inline: auto;
+}
+
+.advanced-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    padding-block-end: var(--spacing-md);
+    border-block-end: 1px solid var(--color-border);
+}
+
+.advanced-header a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.container-demo-page .intro {
+    max-inline-size: 720px;
+    padding-block: clamp(var(--spacing-xl), 8vw, 80px);
+}
+
+.container-demo-page h1 {
+    margin-block: var(--spacing-sm) var(--spacing-md);
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
+.demo-layout {
+    /* I made one column narrow and one wide so you can visualize it side by side. */
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.component-context {
+    /* This wrapper is the container that the feature card will measure. */
+    container-type: inline-size;
+    container-name: feature-context;
+    min-inline-size: 0;
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg);
+}
+
+.context-label {
+    margin-block-end: var(--spacing-md);
+    color: var(--color-muted);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+}
+
+.feature-card {
+    /* The card starts stacked before the container query changes it. */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-card__icon {
+    display: grid;
+    place-items: center;
+    inline-size: 56px;
+    block-size: 56px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    color: var(--header-text);
+    background: var(--color-accent);
+    font-weight: 700;
+}
+
+.feature-card__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.feature-card__content p {
+    color: var(--color-muted);
+}
+
+.feature-card__content a {
+    margin-block-start: auto;
+    font-weight: 700;
+}
+
+/* The same component becomes horizontal only when its own container is wide enough. */
+@container feature-context (min-width: 560px) {
+    /* At this size the card has enough room to place its icon beside the text. */
+    .feature-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+@container feature-context (min-width: 760px) {
+    /* I added a little more padding when the container has extra space. */
+    .feature-card {
+        padding-block: var(--spacing-xl);
+        padding-inline: var(--spacing-xl);
+    }
+}
+
+.explanation {
+    max-inline-size: 720px;
+    margin-block: clamp(var(--spacing-xl), 8vw, 80px);
+}
+
+.explanation h2 {
+    margin-block-end: var(--spacing-sm);
+}
+
+.explanation p {
+    color: var(--color-muted);
+}
+
+.advanced-footer {
+    padding-block-start: var(--spacing-lg);
+    border-block-start: 1px solid var(--color-border);
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+    .demo-layout {
+        grid-template-columns: 1fr;
+    }
+}

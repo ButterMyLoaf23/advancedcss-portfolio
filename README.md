@@ -18,6 +18,8 @@ This repository is my portfolio for WDD 331R: Advanced CSS. The homepage is the 
 - [Editorial Grid Layout](unit4/grid-layouts/editorial.html)
 - [Responsive Card Grid](unit4/grid-layouts/cards.html)
 - [Logical Properties Demo](unit4/logical-properties/index.html)
+- [Container Queries Demo](unit4/advanced/container-demo.html)
+- [Sticky Module Demo](unit4/advanced/sticky-demo.html)
 
 
 ## Theme support

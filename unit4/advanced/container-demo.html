@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A container query demonstration">
+    <title>Container Queries</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="container-demo.css">
+</head>
+<body class="container-demo-page">
+    <header class="advanced-header">
+        <a href="../../index.html">&larr; Boston's portfolio</a>
+        <p>Container Queries</p>
+    </header>
+
+    <main>
+        <section class="intro" aria-labelledby="container-title">
+            <p class="eyebrow">Component-driven layout</p>
+            <h1 id="container-title">The component responds to its container</h1>
+            <p>The same feature component appears in two contexts. Its own container width, not the viewport width, decides when it changes layout.</p>
+        </section>
+
+        <section class="demo-layout" aria-label="Container query examples">
+            <div class="component-context narrow-context">
+                <p class="context-label">Narrow sidebar context</p>
+                <article class="feature-card">
+                    <div class="feature-card__icon" aria-hidden="true">01</div>
+                    <div class="feature-card__content">
+                        <h2>Named containers</h2>
+                        <p>A component can adapt to the space where it lives instead of how it is in the viewport.</p>
+                        <a href="#explanation">Learn the pattern</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="component-context wide-context">
+                <p class="context-label">Wide main-content context</p>
+                <article class="feature-card">
+                    <div class="feature-card__icon" aria-hidden="true">01</div>
+                    <div class="feature-card__content">
+                        <h2>Named containers</h2>
+                        <p>The same markup shifts into a horizontal media object when its named container has enough space.</p>
+                        <a href="#explanation">Learn how it works</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="explanation" class="explanation" aria-labelledby="explanation-title">
+            <h2 id="explanation-title">Why this is different from a media query</h2>
+            <p>A media query asks how wide the viewport is. A container query asks how wide the component's nearest containment context is. That makes the component reusable in sidebars, main content, and other layouts without changing its HTML or adding JavaScript.</p>
+        </section>
+    </main>
+
+    <footer class="advanced-footer">
+        <p><a href="sticky-demo.html">Next: Sticky Module</a></p>
+    </footer>
+</body>
+</html>

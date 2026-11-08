@@ -24,14 +24,14 @@
 }
 
 .articles-page .card-grid {
-    /* min() keeps a card from forcing horizontal scrolling on very narrow screens. */
+    /* I used min() so the cards can shrink instead of causing side-to-side scrolling. */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
     gap: var(--spacing-lg);
 }
 
 .articles-page .card {
-    /* I used a column flex layout so the card body can fill the remaining height. */
+    /* I used flexbox because it keeps the card content in a simple column. */
     display: flex;
     flex-direction: column;
     min-inline-size: 0;
@@ -67,7 +67,52 @@
 }
 
 .articles-page .card a {
-    /* This pushes every Read more link to the bottom of its card. */
+    /* This pushes every read more link to the bottom of its card. */
     margin-block-start: auto;
     font-weight: 700;
+}
+
+/* I added subgrid so cards in the same row can share their title, body, and link rows. */
+@supports (grid-template-rows: subgrid) {
+    /* This gives older browsers a readable flexbox as a fallback. */
+    .articles-page .card-grid {
+        grid-template-rows: auto 1fr auto;
+        align-items: stretch;
+        row-gap: var(--spacing-sm);
+    }
+
+    .articles-page .card {
+        /* Each card stretches across the three shared rows from the parent grid. */
+        position: relative;
+        display: grid;
+        grid-row: span 3;
+        grid-template-rows: subgrid;
+        padding-block-start: 150px;
+    }
+
+    .articles-page .card > div:first-child {
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline: 0;
+        block-size: 150px;
+    }
+
+    .articles-page .card > div:last-child {
+        /* The wrapper stops creating its own grid so the children can use the card rows. */
+        display: contents;
+    }
+
+    .articles-page .card h2,
+    .articles-page .card p,
+    .articles-page .card a {
+        padding-inline: var(--spacing-lg);
+    }
+
+    .articles-page .card h2 {
+        padding-block-start: var(--spacing-lg);
+    }
+
+    .articles-page .card a {
+        padding-block-end: var(--spacing-lg);
+    }
 }

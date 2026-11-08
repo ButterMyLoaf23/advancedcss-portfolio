@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A sticky positioning demonstration">
+    <title>Sticky Module</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="sticky-demo.css">
+</head>
+<body class="sticky-demo-page">
+    <header class="advanced-header">
+        <a href="../../index.html">&larr; Boston's portfolio</a>
+        <p>Sticky Module</p>
+    </header>
+
+    <main>
+        <section class="intro" aria-labelledby="sticky-title">
+            <p class="eyebrow">Positioning in a scrolling layout</p>
+            <h1 id="sticky-title">A table of contents that follows the screen</h1>
+            <p>Scroll through the article and the table of contents will stay with the user till the end of the page.</p>
+        </section>
+
+        <div class="sticky-layout">
+            <aside class="sticky-nav" aria-label="Article sections">
+                <p>On this page</p>
+                <nav>
+                    <a href="#start">Start</a>
+                    <a href="#context">Context</a>
+                    <a href="#details">Details</a>
+                    <a href="#finish">Finish</a>
+                </nav>
+            </aside>
+
+            <article class="long-article">
+                <section id="start">
+                    <p class="eyebrow">01</p>
+                    <h2>Start with the reading flow</h2>
+                    <p>A sticky element remains in normal document flow until the scroll position reaches its offset. After that point, it holds its position while its containing block still has room for it.</p>
+                    <p>This makes sticky positioning useful for table of contents links, labels, and navigation that should remain available without covering the entire page.</p>
+                </section>
+                <section id="context">
+                    <p class="eyebrow">02</p>
+                    <h2>Keep the context intact</h2>
+                    <p>The sticky navigation belongs inside the same layout as the article. As the article grows, the navigation can remain visible, but it will stop at the bottom of the layout instead of escaping its containing block.</p>
+                    <p>The offset is important. Without an inset such as <code>inset block start</code>, the browser has no distance from the top edge at which to hold the element.</p>
+                </section>
+                <section id="details">
+                    <p class="eyebrow">03</p>
+                    <h2>Test the overflow trap</h2>
+                    <p>Sticky positioning can silently fail when an ancestor creates an unexpected scrolling container. This is easy to cause with <code>overflow: hidden</code>, even when the wrapper was only meant to clip a visual effect.</p>
+                    <p>In this demo, the wrapper is intentionally left visible so the page itself remains the scroll container.</p>
+                </section>
+                <section id="finish">
+                    <p class="eyebrow">04</p>
+                    <h2>Finish with a useful pattern</h2>
+                    <p>Sticky positioning is a small feature, but it improves long pages because readers can keep their place without scrolling back to the top. The important part is checking the offset and the overflow behavior of every ancestor.</p>
+                    <p><a href="container-demo.html">Back to the container query demo</a></p>
+                </section>
+            </article>
+        </div>
+    </main>
+</body>
+</html>
