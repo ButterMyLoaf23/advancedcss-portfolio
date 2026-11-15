@@ -21,6 +21,11 @@ This repository is my portfolio for WDD 331R: Advanced CSS. The homepage is the 
 - [Container Queries Demo](unit4/advanced/container-demo.html)
 - [Sticky Module Demo](unit4/advanced/sticky-demo.html)
 - [Masonry Layout Comparison](unit4/masonry/index.html)
+- [Typography System Showcase](unit5/index.html)
+
+## Typography system
+
+The shared type system lives in `css/tokens/variables.css`. It uses a major-third modular scale with fluid `clamp()` steps for larger headings, semantic role tokens for body and heading sizes, and DM Sans for headings. The Google Fonts request uses `display=swap`, so the system font remains visible while the custom font loads. Shared base and Unit 4 styles consume the role tokens instead of hard-coding heading sizes.
 
 
 ## Theme support

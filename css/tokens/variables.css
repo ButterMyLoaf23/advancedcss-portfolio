@@ -1,9 +1,29 @@
 :root {
-  --font-family-sans: system-ui, sans-serif;
+  /* Major-third scale: each step is about 1.25 times the step below it. */
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 0.9rem;
+  --font-size-md: 1rem;
+  --font-size-lg: clamp(1.25rem, calc(1.159rem + 0.0284vw), 1.5rem);
+  --font-size-xl: clamp(1.563rem, calc(1.313rem + 0.0781vw), 2.25rem);
+  --font-size-2xl: clamp(1.953rem, calc(1.436rem + 0.1616vw), 3.375rem);
+  --font-size-3xl: clamp(2.441rem, calc(1.488rem + 0.298vw), 5.063rem);
+  --font-size-4xl: clamp(3.052rem, calc(1.524rem + 0.4775vw), 7.594rem);
+
+  /* The custom font is mainly for headings; body text keeps a familiar system fallback. */
+  --font-family-heading: "DM Sans", system-ui, sans-serif;
+  --font-family-body: system-ui, sans-serif;
+  --font-family-sans: var(--font-family-body);
   --font-family-mono: monospace;
-  --font-size-sm: 1.4rem;
-  --font-size-md: 1.6rem;
-  --font-size-lg: 1.8rem;
+
+  /* Components use these role names instead of choosing scale steps themselves. */
+  --font-size-body: var(--font-size-md);
+  --font-size-caption: var(--font-size-xs);
+  --font-size-heading-sm: var(--font-size-lg);
+  --font-size-heading-lg: var(--font-size-2xl);
+  --font-size-display: var(--font-size-3xl);
+  --line-height-body: 1.6;
+  --line-height-heading: 1.15;
+  --line-height-display: 1.02;
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -34,6 +54,7 @@
   --space-sm: var(--spacing-sm);
   --space-md: var(--spacing-md);
   --space-lg: var(--spacing-lg);
-  --font-body: var(--font-family-sans);
-  --font-size-base: 1rem;
+  /* Legacy names keep the earlier pages working during the type-system update. */
+  --font-body: var(--font-family-body);
+  --font-size-base: var(--font-size-body);
 }

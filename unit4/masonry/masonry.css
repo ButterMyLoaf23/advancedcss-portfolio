@@ -32,7 +32,7 @@
 
 .masonry-page h1 {
     margin-block: var(--spacing-sm) var(--spacing-md);
-    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-size: var(--font-size-display);
     line-height: 1;
 }
 

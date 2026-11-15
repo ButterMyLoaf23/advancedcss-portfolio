@@ -78,7 +78,7 @@
 .effects-page .demo-label {
   margin-bottom: var(--spacing-sm);
   color: var(--color-accent);
-  font-size: 0.8rem;
+  font-size: var(--font-size-caption);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -253,15 +253,15 @@
 
 .effects-page .hero h1 {
   color: inherit;
-  font-size: clamp(2.8rem, 7vw, 5.4rem);
-  line-height: 1.02;
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
   text-shadow: 0 2px 2px rgb(0 0 0 / 0.28), 0 8px 24px rgb(0 0 0 / 0.45);
 }
 
 .effects-page .hero p {
   margin-top: var(--spacing-md);
   color: rgb(255 255 255 / 0.86);
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: var(--font-size-heading-sm);
 }
 
 .effects-page main {
@@ -272,7 +272,7 @@
 
 .effects-page section > h2 {
   margin-bottom: var(--spacing-lg);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: var(--font-size-heading-lg);
 }
 
 .effects-page .cards {
@@ -317,7 +317,7 @@
 
 .effects-page .card h3 {
   margin-bottom: var(--spacing-sm);
-  font-size: 1.25rem;
+  font-size: var(--font-size-heading-sm);
 }
 
 .effects-page .card p,

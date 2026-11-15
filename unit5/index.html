@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unit 5 typography system demonstration for Boston Wyatt's Advanced CSS portfolio.">
+    <title>Unit 5 Typography System | Boston Wyatt</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="typography.css">
+</head>
+<body class="typography-page">
+    <header class="type-header">
+        <a href="../index.html">&larr; Boston's portfolio</a>
+        <p>Unit 5: Typography System</p>
+    </header>
+
+    <main>
+        <section class="type-hero" aria-labelledby="type-title">
+            <p class="eyebrow">Fluid type and semantic tokens</p>
+            <h1 id="type-title">A type system that scales with the page</h1>
+            <p class="type-lede">This page shows the modular scale, role tokens, and custom heading font I added to the shared CSS architecture.</p>
+        </section>
+
+        <section class="type-section" aria-labelledby="scale-title">
+            <div class="section-heading">
+                <p class="eyebrow">The numeric layer</p>
+                <h2 id="scale-title">Major-third modular scale</h2>
+                <p>Each step grows by about 1.25 times the step below it. The larger steps use <code>clamp()</code> so they grow smoothly instead of jumping at a breakpoint.</p>
+            </div>
+            <div class="scale-list">
+                <p class="scale-item scale-xs"><span>XS</span> Supporting text</p>
+                <p class="scale-item scale-sm"><span>SM</span> Small labels</p>
+                <p class="scale-item scale-md"><span>MD</span> Body text</p>
+                <p class="scale-item scale-lg"><span>LG</span> Small headings</p>
+                <p class="scale-item scale-xl"><span>XL</span> Section titles</p>
+                <p class="scale-item scale-2xl"><span>2XL</span> Large headings</p>
+                <p class="scale-item scale-3xl"><span>3XL</span> Display text</p>
+            </div>
+        </section>
+
+        <section class="type-section" aria-labelledby="roles-title">
+            <div class="section-heading">
+                <p class="eyebrow">The semantic layer</p>
+                <h2 id="roles-title">Roles keep components readable</h2>
+                <p>Components use names such as body, caption, heading, and display instead of choosing a numeric scale step directly.</p>
+            </div>
+            <div class="role-grid">
+                <article class="role-card">
+                    <p class="role-card__label">Body role</p>
+                    <p class="role-card__sample">This paragraph uses the shared body size and line height so longer text stays comfortable to read.</p>
+                    <code>--font-size-body</code>
+                </article>
+                <article class="role-card">
+                    <p class="role-card__label">Heading role</p>
+                    <h3 class="role-card__sample">This heading uses the custom font</h3>
+                    <code>--font-size-heading-sm</code>
+                </article>
+                <article class="role-card">
+                    <p class="role-card__label">Caption role</p>
+                    <p class="role-card__sample">Small supporting information belongs here.</p>
+                    <code>--font-size-caption</code>
+                </article>
+            </div>
+        </section>
+
+        <section class="type-section type-note" aria-labelledby="responsive-title">
+            <p class="eyebrow">Try resizing the browser</p>
+            <h2 id="responsive-title">The hierarchy stays flexible</h2>
+            <p>The body size remains steady while the larger headings scale between their minimum and maximum values. This keeps the hierarchy readable on a phone and still gives the desktop version enough emphasis.</p>
+        </section>
+    </main>
+
+    <footer class="type-footer">
+        <p><a href="../index.html">Return to the portfolio home</a></p>
+    </footer>
+</body>
+</html>

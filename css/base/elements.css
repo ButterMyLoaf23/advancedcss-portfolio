@@ -2,13 +2,32 @@ body {
   min-width: 320px;
   color: var(--color-text);
   background: var(--color-background);
-  font-family: var(--font-body);
-  font-size: var(--font-size-base);
-  line-height: 1.5;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
   color: var(--color-text);
+  line-height: var(--line-height-heading);
+}
+
+h1 {
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
+}
+
+h2 {
+  font-size: var(--font-size-heading-lg);
+}
+
+h3, h4, h5, h6 {
+  font-size: var(--font-size-heading-sm);
+}
+
+small {
+  font-size: var(--font-size-caption);
 }
 
 a {

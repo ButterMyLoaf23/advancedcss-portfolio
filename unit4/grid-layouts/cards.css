@@ -16,7 +16,7 @@
 
 .articles-page header h1 {
     margin-block-end: var(--spacing-sm);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: var(--font-size-display);
 }
 
 .articles-page header p {
@@ -59,7 +59,7 @@
 }
 
 .articles-page .card h2 {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-heading-sm);
 }
 
 .articles-page .card p {
