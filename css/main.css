@@ -1,8 +1,6 @@
 /* I use a hosted heading font with swap so the fallback text stays visible while it loads. */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
 
-@layer tokens, base, layout, components, utilities;
-
 @import url("tokens/colors.css") layer(tokens);
 @import url("tokens/variables.css") layer(tokens);
 @import url("base/reset.css") layer(base);
@@ -12,3 +10,6 @@
 @import url("components/theme-toggle.css") layer(components);
 @import url("components/effects.css") layer(components);
 @import url("utilities/utilities.css") layer(utilities);
+
+/* I declare the layer order after the imports so every stylesheet is loaded into its layer first. */
+@layer tokens, base, layout, components, utilities;

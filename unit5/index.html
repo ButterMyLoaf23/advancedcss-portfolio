@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Unit 5 typography system demonstration for Boston Wyatt's Advanced CSS portfolio.">
-    <title>Unit 5 Typography System | Boston Wyatt</title>
+    <meta name="description" content="Unit 5">
+    <title>Unit 5</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="typography.css">
 </head>
 <body class="typography-page">
     <header class="type-header">
-        <a href="../index.html">&larr; Boston's portfolio</a>
-        <p>Unit 5: Typography System</p>
+        <a href="../index.html">Boston's portfolio</a>
+        <p>Unit 5</p>
     </header>
 
     <main>
-        <section class="type-hero" aria-labelledby="type-title">
-            <p class="eyebrow">Fluid type and semantic tokens</p>
-            <h1 id="type-title">A type system that scales with the page</h1>
-            <p class="type-lede">This page shows the modular scale, role tokens, and custom heading font I added to the shared CSS architecture.</p>
+        <section class="type-hero">
+            <p class="small-label">What I changed</p>
+            <h1 id="type-title">My typography system</h1>
+            <p class="intro-text">I used this page to test the new font sizes, line heights, and heading font for Unit 5.</p>
         </section>
 
-        <section class="type-section" aria-labelledby="scale-title">
+        <section class="type-section">
             <div class="section-heading">
-                <p class="eyebrow">The numeric layer</p>
-                <h2 id="scale-title">Major-third modular scale</h2>
-                <p>Each step grows by about 1.25 times the step below it. The larger steps use <code>clamp()</code> so they grow smoothly instead of jumping at a breakpoint.</p>
+                <p class="small-label">Part one</p>
+                <h2 id="scale-title">The size scale</h2>
+                <p>I chose a major-third scale. Each step is about 1.25 times the step before it, and the larger sizes use <code>clamp()</code>.</p>
             </div>
             <div class="scale-list">
                 <p class="scale-item scale-xs"><span>XS</span> Supporting text</p>
@@ -38,40 +38,36 @@
             </div>
         </section>
 
-        <section class="type-section" aria-labelledby="roles-title">
+        <section class="type-section">
             <div class="section-heading">
-                <p class="eyebrow">The semantic layer</p>
-                <h2 id="roles-title">Roles keep components readable</h2>
-                <p>Components use names such as body, caption, heading, and display instead of choosing a numeric scale step directly.</p>
+                <p class="small-label">Part two</p>
+                <h2 id="roles-title">The names I use in CSS</h2>
+                <p>Instead of choosing a number every time, my components use names like body, caption, heading, and display.</p>
             </div>
             <div class="role-grid">
                 <article class="role-card">
-                    <p class="role-card__label">Body role</p>
-                    <p class="role-card__sample">This paragraph uses the shared body size and line height so longer text stays comfortable to read.</p>
+                    <p class="card-label">Body role</p>
+                    <p class="card-sample">This uses the shared body size and line height for normal paragraphs.</p>
                     <code>--font-size-body</code>
                 </article>
                 <article class="role-card">
-                    <p class="role-card__label">Heading role</p>
-                    <h3 class="role-card__sample">This heading uses the custom font</h3>
+                    <p class="card-label">Heading role</p>
+                    <h3 class="card-sample">This heading uses the custom font</h3>
                     <code>--font-size-heading-sm</code>
                 </article>
                 <article class="role-card">
-                    <p class="role-card__label">Caption role</p>
-                    <p class="role-card__sample">Small supporting information belongs here.</p>
+                    <p class="card-label">Caption role</p>
+                    <p class="card-sample">This is for small supporting information.</p>
                     <code>--font-size-caption</code>
                 </article>
             </div>
         </section>
 
-        <section class="type-section type-note" aria-labelledby="responsive-title">
-            <p class="eyebrow">Try resizing the browser</p>
-            <h2 id="responsive-title">The hierarchy stays flexible</h2>
-            <p>The body size remains steady while the larger headings scale between their minimum and maximum values. This keeps the hierarchy readable on a phone and still gives the desktop version enough emphasis.</p>
+        <section class="type-section type-note">
+            <p class="small-label">One last test</p>
+            <h2 id="responsive-title">Resizing the page</h2>
+            <p>The body text stays about the same size, but the bigger headings grow and shrink between their minimum and maximum values. I used this section to check the page at different widths.</p>
         </section>
     </main>
-
-    <footer class="type-footer">
-        <p><a href="../index.html">Return to the portfolio home</a></p>
-    </footer>
 </body>
 </html>

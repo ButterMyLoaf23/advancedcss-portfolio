@@ -1,12 +1,12 @@
 .typography-page {
+    /* I kept the page spacing simple so the type examples are the main focus. */
     min-block-size: 100vh;
     padding-block: var(--spacing-lg);
     padding-inline: 5vw;
 }
 
 .type-header,
-.typography-page main,
-.type-footer {
+.typography-page main {
     inline-size: min(100%, 1100px);
     margin-inline: auto;
 }
@@ -27,20 +27,20 @@
 
 .type-hero {
     max-inline-size: 780px;
-    padding-block: clamp(var(--spacing-xl), 9vw, 96px);
+    padding-block: 48px;
 }
 
 .type-hero h1 {
     margin-block: var(--spacing-sm) var(--spacing-md);
 }
 
-.type-lede {
+.intro-text {
     color: var(--color-muted);
     font-size: var(--font-size-heading-sm);
 }
 
 .type-section {
-    margin-block-end: clamp(var(--spacing-xl), 8vw, 80px);
+    margin-block-end: 48px;
 }
 
 .section-heading {
@@ -53,17 +53,13 @@
     margin-block: var(--spacing-sm);
 }
 
-.section-heading > p:last-child,
-.type-note > p:last-child {
-    color: var(--color-muted);
-}
-
 .scale-list {
     display: grid;
     gap: var(--spacing-sm);
 }
 
 .scale-item {
+    /* These rows make it easy to compare the scale steps without adding a chart. */
     display: flex;
     align-items: baseline;
     gap: var(--spacing-md);
@@ -103,19 +99,18 @@
     min-inline-size: 0;
     padding: var(--spacing-lg);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-sm);
     background: var(--color-surface);
 }
 
-.role-card__label {
+.card-label {
     margin: 0;
     color: var(--color-accent);
     font-size: var(--font-size-caption);
     font-weight: 700;
-    text-transform: uppercase;
 }
 
-.role-card__sample {
+.card-sample {
     flex: 1;
     margin: 0;
 }
@@ -130,13 +125,7 @@
     padding-block: var(--spacing-lg);
     padding-inline: var(--spacing-lg);
     border-inline-start: 4px solid var(--color-accent);
-    background: var(--color-accent-soft);
-}
-
-.type-footer {
-    padding-block-start: var(--spacing-lg);
-    border-block-start: 1px solid var(--color-border);
-    text-align: center;
+    background: var(--color-surface);
 }
 
 @media (max-width: 720px) {
