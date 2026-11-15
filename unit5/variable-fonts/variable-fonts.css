@@ -1,0 +1,131 @@
+/* Google Fonts supplies the variable font with swap while the file is loading. */
+@import url("https://fonts.googleapis.com/css2?family=Recursive:CASL,CRSV,MONO,slnt,wght@0..1,0..1,0..1,-15..0,300..1000&display=swap");
+
+.variable-page {
+    min-block-size: 100vh;
+    padding-block: var(--spacing-lg);
+    padding-inline: 5vw;
+}
+
+.variable-header,
+.variable-page main {
+    inline-size: min(100%, 1000px);
+    margin-inline: auto;
+}
+
+.variable-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    padding-block-end: var(--spacing-md);
+    border-block-end: 1px solid var(--color-border);
+}
+
+.variable-header a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.variable-intro {
+    max-inline-size: 720px;
+    padding-block: 48px;
+}
+
+.variable-intro h1 {
+    margin-block: var(--spacing-sm) var(--spacing-md);
+    font-family: "Recursive", var(--font-family-heading);
+}
+
+.variable-intro p:last-child,
+.section-heading > p:last-child,
+.comparison p:last-child {
+    color: var(--color-muted);
+}
+
+.font-playground,
+.font-section {
+    margin-block-end: 48px;
+}
+
+.section-heading h2,
+.font-section h2 {
+    margin-block: var(--spacing-sm) var(--spacing-md);
+}
+
+.font-playground {
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+}
+
+.font-controls {
+    display: grid;
+    gap: var(--spacing-sm);
+    max-inline-size: 620px;
+    margin-block: var(--spacing-lg);
+}
+
+.font-controls label {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    font-weight: 700;
+}
+
+.font-controls output {
+    color: var(--color-accent);
+    font-variant-numeric: tabular-nums;
+}
+
+.font-sample {
+    margin-block: var(--spacing-xl) var(--spacing-md);
+    font-family: "Recursive", var(--font-family-heading);
+    font-size: var(--font-size-heading-lg);
+    font-weight: var(--demo-weight, 400);
+    font-style: oblique calc(var(--demo-slant, 0) * 1deg);
+    font-optical-sizing: auto;
+    font-variation-settings:
+        "slnt" var(--demo-slant, 0),
+        "CASL" var(--demo-casl, 0),
+        "MONO" var(--demo-mono, 0);
+    transition: font-weight 180ms ease, font-style 180ms ease, font-variation-settings 180ms ease;
+}
+
+.font-sample:hover {
+    font-weight: 800;
+}
+
+.font-output {
+    display: block;
+    overflow-wrap: anywhere;
+    color: var(--color-muted);
+    font-size: var(--font-size-caption);
+}
+
+.property-list {
+    display: grid;
+    gap: var(--spacing-sm);
+    max-inline-size: 760px;
+}
+
+.property-list p {
+    margin: 0;
+    padding-block: var(--spacing-sm);
+    padding-inline-start: var(--spacing-md);
+    border-inline-start: 3px solid var(--color-accent);
+}
+
+.comparison {
+    max-inline-size: 760px;
+    padding: var(--spacing-lg);
+    border-inline-start: 4px solid var(--color-accent);
+    background: var(--color-surface);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .font-sample {
+        transition: none;
+    }
+}

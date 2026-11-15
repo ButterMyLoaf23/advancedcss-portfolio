@@ -22,6 +22,7 @@ This repository is my portfolio for WDD 331R: Advanced CSS. The homepage is the 
 - [Sticky Module Demo](unit4/advanced/sticky-demo.html)
 - [Masonry Layout Comparison](unit4/masonry/index.html)
 - [Typography System Showcase](unit5/index.html)
+- [Variable Font Playground](unit5/variable-fonts/index.html)
 
 ## Typography system
 
