@@ -12,6 +12,7 @@
 }
 
 .type-header {
+    /* I kept the header basic because this page is mostly about the type. */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -35,6 +36,7 @@
 }
 
 .intro-text {
+    /* The intro is a little bigger than normal body text so it stands out. */
     color: var(--color-muted);
     font-size: var(--font-size-heading-sm);
 }
@@ -87,6 +89,7 @@
 .scale-3xl { font-size: var(--font-size-3xl); }
 
 .role-grid {
+    /* The three columns let me compare the roles side by side. */
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--spacing-md);
@@ -129,6 +132,7 @@
 }
 
 @media (max-width: 720px) {
+    /* Stacking the cards makes them easier to read on a smaller screen. */
     .role-grid {
         grid-template-columns: 1fr;
     }
