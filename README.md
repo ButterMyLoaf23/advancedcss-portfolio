@@ -14,7 +14,6 @@ This repository is my portfolio for WDD 331R: Advanced CSS. The homepage is the 
 - [Layered Components](unit2/layered-components/index.html)
 - [Visual Effects Showcase](unit3/visual-effects/index.html)
 - [Filter Performance Lab](unit3/visual-effects/performance.html)
-<!-- I added these Unit 4 pages so the README matches the homepage links. -->
 - [Editorial Grid Layout](unit4/grid-layouts/editorial.html)
 - [Responsive Card Grid](unit4/grid-layouts/cards.html)
 - [Logical Properties Demo](unit4/logical-properties/index.html)
@@ -23,6 +22,8 @@ This repository is my portfolio for WDD 331R: Advanced CSS. The homepage is the 
 - [Masonry Layout Comparison](unit4/masonry/index.html)
 - [Typography System Showcase](unit5/index.html)
 - [Variable Font Playground](unit5/variable-fonts/index.html)
+- [Resume](unit5/resume.html)
+- [Contact Form](unit5/contact.html)
 
 ## Typography system
 
@@ -32,4 +33,10 @@ The shared type system lives in `css/tokens/variables.css`. It uses a major-thir
 ## Theme support
 
 The site now supports light mode, dark mode, and your system default option. Color seeds, the OKLCH accent ramp, and semantic `light-dark()` tokens live in `css/tokens/colors.css`. The theme styles are in `css/components/theme-toggle.css`, and `js/theme-preference.js` saves the selected preference in `localStorage` so it remains when any user returns the site still has their preference for the theme still active.
+
+## Resume, print, and contact form
+
+The [resume page](unit5/resume.html) uses semantic sections and print styles in `css/main.css`. The print view hides screen-only links, uses print-friendly type sizes, keeps entries together, and shows link URLs. The [contact page](unit5/contact.html) uses connected labels, the shared accent color, and a growing textarea with fallback size limits.
+
+For the token audit, I removed unused accent, typography, icon, and theme-toggle tokens, then changed the shared home-page styles to use the main `spacing-*` names directly. I kept the separate Unit 1 and Unit 2 token files because those are self-contained earlier assignments. The shared root already sets `accent-color` from the semantic accent token.
 

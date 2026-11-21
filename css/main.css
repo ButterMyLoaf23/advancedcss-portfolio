@@ -13,3 +13,72 @@
 
 /* I declare the layer order after the imports so every stylesheet is loaded into its layer first. */
 @layer tokens, base, layout, components, utilities;
+
+/* Print view removes screen-only controls and keeps the resume readable on paper. */
+@media print {
+  @page {
+    margin: 0.6in;
+  }
+
+  body.resume-page {
+    min-width: 0;
+    color: #111;
+    background: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  .resume-page .resume-header {
+    padding: 0 0 12pt;
+    color: var(--header-text);
+    background: var(--header-bg);
+    border-block-end: 2pt solid #111;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .resume-page .resume-header h1 {
+    color: inherit;
+  }
+
+  .resume-page h2,
+  .resume-page h3 {
+    color: #111;
+  }
+
+  .resume-page .resume-header h1 {
+    font-size: 24pt;
+  }
+
+  .resume-page .resume-actions {
+    display: none;
+  }
+
+  .resume-page .resume-content {
+    width: 100%;
+    padding-block: 16pt;
+  }
+
+  .resume-page .resume-section,
+  .resume-page .resume-entry {
+    break-inside: avoid;
+  }
+
+  .resume-page p,
+  .resume-page li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .resume-page a {
+    color: #111;
+  }
+
+  .resume-page a[href^="http"]::after,
+  .resume-page a[href^="mailto"]::after,
+  .resume-page a[href^="tel"]::after {
+    content: " (" attr(href) ")";
+    overflow-wrap: anywhere;
+  }
+}

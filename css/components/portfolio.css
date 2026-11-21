@@ -1,6 +1,6 @@
 .work-link {
   display: block;
-  padding: var(--space-sm);
+  padding: var(--spacing-sm);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background: var(--color-surface);
@@ -9,4 +9,171 @@
 
 .work-link:hover, .work-link:focus-visible {
   background: var(--color-accent-soft);
+}
+
+/* These styles give the resume and contact page the same simple look as my home page. */
+.resume-header {
+  padding: clamp(var(--spacing-xl), 8vw, 72px) 0 var(--spacing-lg);
+  color: var(--header-text);
+  background: var(--header-bg);
+}
+
+.resume-page {
+  color: #e7f0f2;
+  background: #0d171b;
+}
+
+.resume-page h1,
+.resume-page h2,
+.resume-page h3 {
+  color: #f4fbfc;
+}
+
+.resume-page a {
+  color: #75d3d0;
+}
+
+.resume-page a:hover,
+.resume-page a:focus-visible {
+  color: #b7f1ed;
+}
+
+.resume-page .resume-header {
+  background: #172b33;
+  border-block-end: 1px solid #2f5963;
+}
+
+.resume-page .resume-section h2 {
+  border-block-end-color: #4cb8b3;
+}
+
+.resume-page .resume-meta {
+  color: #a8bec2;
+}
+
+.resume-header h1 {
+  color: inherit;
+}
+
+.resume-label, .resume-meta {
+  font-size: var(--font-size-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding-block: var(--spacing-md);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.resume-content, .contact-content {
+  padding-block: var(--spacing-xl);
+}
+
+.resume-section {
+  margin-block-end: var(--spacing-xl);
+}
+
+.resume-section h2 {
+  margin-block-end: var(--spacing-md);
+  padding-block-end: var(--spacing-sm);
+  border-block-end: 2px solid var(--color-accent);
+}
+
+.resume-entry {
+  display: grid;
+  gap: var(--spacing-sm);
+  margin-block-end: var(--spacing-lg);
+}
+
+.resume-entry h3 {
+  margin-block-end: var(--spacing-xs);
+}
+
+.resume-meta {
+  color: var(--color-muted);
+}
+
+.resume-entry ul, .skill-list {
+  display: grid;
+  gap: var(--spacing-xs);
+  padding-inline-start: 1.25rem;
+  list-style: disc;
+}
+
+.skill-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-content {
+  max-inline-size: 700px;
+}
+
+.contact-page {
+  color: #e7f0f2;
+  background: #0d171b;
+}
+
+.contact-page h1 {
+  color: #f4fbfc;
+}
+
+.contact-page .site-header {
+  background: #172b33;
+  border-block-end-color: #2f5963;
+}
+
+.contact-page .contact-content > p {
+  color: #a8bec2;
+}
+
+.contact-page .contact-form {
+  border-color: #2f5963;
+  background: #172b33;
+}
+
+.contact-page input[type="text"],
+.contact-page input[type="email"],
+.contact-page textarea {
+  border-color: #426a73;
+  color: #e7f0f2;
+  background: #0d171b;
+}
+
+.contact-page input::placeholder,
+.contact-page textarea::placeholder {
+  color: #91a9ad;
+}
+
+.contact-form {
+  display: grid;
+  gap: var(--spacing-lg);
+  margin-block-start: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.form-field {
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
 }

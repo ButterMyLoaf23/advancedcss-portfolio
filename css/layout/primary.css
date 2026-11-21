@@ -5,7 +5,7 @@
 }
 
 .site-header {
-  padding: var(--space-lg) 0;
+  padding: var(--spacing-lg) 0;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -16,11 +16,11 @@
 
 .intro {
   max-width: 650px;
-  padding: var(--space-lg) 0;
+  padding: var(--spacing-lg) 0;
 }
 
 .intro h2, .work-nav h2 {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 .intro p {
@@ -28,12 +28,12 @@
 }
 
 .work-nav {
-  padding-bottom: var(--space-lg);
+  padding-bottom: var(--spacing-lg);
 }
 
 .work-list {
   display: grid;
-  gap: var(--space-sm);
+  gap: var(--spacing-sm);
   max-width: 650px;
 }
 
