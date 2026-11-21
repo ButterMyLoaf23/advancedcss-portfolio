@@ -165,13 +165,6 @@
   gap: var(--spacing-xs);
 }
 
-.checkbox-field {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  font-weight: 400;
-}
-
 @media (max-width: 600px) {
   .skill-list {
     grid-template-columns: 1fr;
