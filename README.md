@@ -22,6 +22,7 @@ This repository is my portfolio for WDD 331R: Advanced CSS. The homepage is the 
 - [Masonry Layout Comparison](unit4/masonry/index.html)
 - [Typography System Showcase](unit5/index.html)
 - [Variable Font Playground](unit5/variable-fonts/index.html)
+- [Form Controls Demo](unit5/form-controls/index.html)
 - [Resume](unit5/resume.html)
 - [Contact Form](unit5/contact.html)
 

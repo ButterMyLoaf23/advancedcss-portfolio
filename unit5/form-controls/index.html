@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Form control styling demo.">
+    <title>Form Controls</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <!-- <link rel="stylesheet" href="form-controls.css"> -->
+</head>
+<body class="controls-page">
+    <header class="controls-header">
+        <div class="controls-shell">
+            <a href="../index.html">Unit 5</a>
+            <p>Form controls demo</p>
+        </div>
+    </header>
+
+    <main class="controls-shell">
+        <section class="controls-intro">
+            <p class="small-label">Unit 5 practice</p>
+            <h1>Small changes to familiar controls</h1>
+            <p>I kept the form controls recognizable, then added a few styles to make them match the rest of my site.</p>
+        </section>
+
+        <form class="controls-form" action="#" method="post">
+            <div class="field-group">
+                <label for="full-name">Name</label>
+                <input id="full-name" name="full-name" type="text" autocomplete="name" placeholder="Your name" required>
+            </div>
+
+            <div class="field-group">
+                <label for="email-address">Email</label>
+                <input id="email-address" name="email-address" type="email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="field-group">
+                <label for="project-type">What are you working on?</label>
+                <select id="project-type" name="project-type">
+                    <option value="">Choose one</option>
+                    <option value="portfolio">Portfolio site</option>
+                    <option value="class-project">Class project</option>
+                    <option value="other">Something else</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <label for="interest">How interested are you? <output id="interest-value">5</output>/10</label>
+                <input id="interest" name="interest" type="range" min="1" max="10" value="5">
+            </div>
+
+            <div class="field-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write a short message."></textarea>
+            </div>
+
+            <button type="submit">Send message</button>
+        </form>
+    </main>
+
+    <script>
+        const interest = document.querySelector("#interest");
+        const interestValue = document.querySelector("#interest-value");
+
+        interest.addEventListener("input", () => {
+            interestValue.value = interest.value;
+        });
+    </script>
+</body>
+</html>
